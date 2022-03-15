@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" th:href="@{/css/css_general.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/css_librosautor.css}">
+    <link rel="stylesheet" th:href="@{/css/css_autores.css}">
+</head>
+<body>
+    
+    <header>
+        <h1>
+            Libreria casa de la <br>
+            lectura
+        </h1>
+        <nav>
+            <a th:href="@{/libreria/libros}"><img th:src="@{/img/Imagen 4.png}" alt="Libros"></a>
+            <a th:href="@{/libreria/autores}"><img th:src="@{/img/Imagen 6.png}" alt="Autores"></a>
+        </nav>
+    </header>
+
+    <section class="panel-b">
+
+        <img th:src="@{/img/pen-filler-g8f183fa43_1280.png}" alt="">
+
+        <div class="buscador">
+            <input type="text" name="buscar" id="buscar" placeholder="Nombre del libro">
+                <svg class="btn-buscar" id="btn-buscar" xmlns="http://www.w3.org/2000/svg" width="41.104" height="39.324" viewBox="0 0 41.104 39.324">
+                    <path id="Trazado_1" data-name="Trazado 1" d="M13.862,29.956l6.254-5.97m0,0a6.739,6.739,0,0,0,9.217,0,6.023,6.023,0,0,0,0-8.8,6.739,6.739,0,0,0-9.217,0,6.022,6.022,0,0,0,0,8.8ZM42.1,21.662c0,10.307-8.754,18.662-19.552,18.662S3,31.969,3,21.662,11.754,3,22.552,3,42.1,11.355,42.1,21.662Z" transform="translate(-2 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  </svg>
+            
+              
+        </div>
+    </section>
+
+    <main id="resp">
+        <a th:each="autor : ${autores}" th:href="@{/libreria/librosautor/} + ${autor.idAutor}">
+            <div class="autor" >
+                <img th:src="@{/img/hand-.png}" alt="">
+                <p th:text="${autor.nombre}">nombre del autor</p>
+            </div>
+        </a>
+        
+    </main>
+    <script th:src="@{/js/myhttp.js}"></script>
+    <script th:src="@{/js/app_buscadorautores.js}"></script>
+</body>
+</html>

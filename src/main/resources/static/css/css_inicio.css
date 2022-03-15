@@ -1,0 +1,81 @@
+section.panel-b{
+    
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    /* background-color: red; */
+    padding: 10px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    background-color: #f6eeeea8;
+
+}
+
+.panel-b select{
+    width: 150px;
+    height: 30px;
+    font-size: 1.5em;
+}
+
+div.buscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"]{
+    
+    width: 250px;
+    height: 34px;
+    
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+    margin-right: 2px;
+    padding-left: 3px;
+    
+    font-size: 1.5em;
+    
+}
+
+.btn-buscar{
+    cursor: pointer;
+}
+
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main a{
+    margin: 20px;
+    width: 200px;
+    height: 350px;
+}
+
+div.libro{
+    /* margin: 20px; */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+div.libro:hover{
+    /* border: solid; */
+    background-color: #f6eeee6c;
+}
+
+div.libro img{
+    width: 180px;
+    height: 288px;
+}

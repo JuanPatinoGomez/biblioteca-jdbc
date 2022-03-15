@@ -1,0 +1,27 @@
+main{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: transparent;
+}
+
+h2{
+    font-size: 3em;
+}
+
+main img{
+    /* width: 400px;
+    height: 500px; */
+    /* flex-grow: 1; */
+    width: 25%;
+}
+
+main p{
+    font-size: 2em;
+}
+
+div.informacion-libro{
+    width: 60%;
+    margin-left: 20px;
+    background-color: #f6eeeea8;
+}

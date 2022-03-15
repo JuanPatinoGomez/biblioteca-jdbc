@@ -1,0 +1,131 @@
+1 - aventura
+2 - ciencia ficcion
+3 - policiaca
+4 - fantasia
+
+
+
+insert into autor (nombre) values('Fahrenheit 451'); --5
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('Fahrenheit 451',
+5, 1953,'rtgf2',215,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFLYqTnf1vVmikk30copKPj-zikS_TIIbKUxxTB-SSMUNRz04rhlRSqUS6&s=5',
+'Fahrenheit 451 es una novela distópica del escritor estadounidense Ray Bradbury, publicada en 1953 y considerada una 
+de sus mejores obras.​ La novela presenta una sociedad estadounidense del futuro en la que los libros están prohibidos 
+y existen «bomberos» que queman cualquiera que encuentren.') --1
+
+
+insert into libro_has_genero (idlibro, idgenero) values(1, 2);
+
+--
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('Crónicas marcianas',
+5, 1950,'rtsdfagf2',301,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG_MJD7du_0j491akRHrknRMtkFdWujV38PvmXw_VMtBHX9nARknyFlL1B&s=5',
+'Crónicas marcianas es una serie de relatos del escritor Ray Bradbury. Los relatos carecen de una línea argumental lineal 
+fija, pero la referencia contextual y temporal es la misma en todos ellos: narra la llegada a Marte y la colonización del
+ planeta por parte de los humanos.') --2
+
+insert into libro_has_genero (idlibro, idgenero) values(2, 4);
+
+--
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('El vino del estío',
+5, 1957,'rtsdfaaagf2',300,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ4m6w_ysALwREs6Me-SGN3ASkrWJRIEsN0OKsOm5D&usqp=CAE&s',
+'El vino del estío es una novela de Ray Bradbury publicada en 1957 cuatro años después de la aparición de Las 
+doradas manzanas del sol y Fahrenheit 451. La historia transcurre en el año 1928, y narra las vacaciones de verano 
+de Douglas Spaulding, un niño de doce años, en la ciudad ficticia de Green Town.') -- 3
+
+insert into libro_has_genero (idlibro, idgenero) values(3, 4);
+insert into libro_has_genero (idlibro, idgenero) values(3, 2);
+
+--
+
+
+insert into autor (nombre) values('Gabriel García Márquez'); --6
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('Cien años de soledad',
+6, 1967,'asdfaf2',471,
+'https://panamericana.vteximg.com.br/arquivos/ids/176402-600-690/cien-anos-de-soledad-3-9789585863743.jpg?v=636209687121330000',
+'Cien años de soledad es una novela del escritor colombiano Gabriel García Márquez, ganador del Premio Nobel de Literatura en 1982. 
+Es considerada una obra maestra de la literatura hispanoamericana y universal, así como una de las obras más traducidas y leídas en español.​')  --4
+
+insert into libro_has_genero (idlibro, idgenero) values(4, 4);
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('Crónica de una muerte anunciada',
+6, 1981,'asdfssaf2',156,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRShTVATL5q9mM6Y3YBMKnSOxpgz6R7LrVMFUGjQIh1iJeQTXfet5ddZD_O&s=5',
+'Crónica de una muerte anunciada es una novela del escritor colombiano Gabriel García Márquez, publicada por primera vez en 1981. 
+Fue incluida en la lista de las 100 mejores novelas en español del siglo XX del periódico español El Mundo.')​ --5
+
+insert into libro_has_genero (idlibro, idgenero) values(5, 3);
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('La hojarasca',
+6, 1955,'asdfssaf2',119,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpaMNVwxwvH_thpGeIbsMmCrcqIOhwxmBlIKntKXPGlXnQXS-Zaczs_HRJ&s=5',
+'La hojarasca es una novela corta escrita por Gabriel García Márquez, publicada en 1955. Es conocida por mostrar por primera 
+vez Macondo, el pueblo ficticio hecho famoso en Cien años de soledad. La hojarasca es un terreno de pruebas para muchos de los temas 
+y personajes más tarde inmortalizados en dicha obra.')​ --6
+
+insert into libro_has_genero (idlibro, idgenero) values(6, 2);
+
+----------------------------------------------------------------------------------------------
+insert into autor (nombre) values('Robert Louis Stevenson');
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('La isla del tesoro',
+7, 1882,'55sadf',292,
+'https://www.liberespacio.com/wp-content/uploads/2021/04/9788427213777.jpg',
+'La isla del tesoro es una novela de aventuras escrita por el escocés Robert Louis Stevenson, publicada en libro 
+en Londres en 1883. Esta obra ha sido fuente de inspiración para el cine, la televisión, la literatura, cómics e incluso videojuegos');
+
+
+insert into libro_has_genero (idlibro, idgenero) values(7, 1);
+
+insert into autor (nombre) values('Robert Louis Stevenson');
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('Las aventuras de Tom Sawyer',
+8, 1876,'asr6g854',171,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT56vSooVv-49YCpwOmfiFfu_wKK5j0dIqG1CJxgnZD9AHpfBF5WEue4vur&s=5',
+'Las aventuras de Tom Sawyer es una novela del autor estadounidense Mark Twain publicada entre 1876 y 1878, actualmente 
+considerada una obra maestra de la literatura. Relata las aventuras de la infancia de Tom Sawyer, un niño que crece durante 
+el antebellum de la Guerra de Secesión en «St. Petersburg», una población ficticia, de la costa del río Misisipi inspirada en Hannibal, donde creció el autor.');
+
+
+insert into libro_has_genero (idlibro, idgenero) values(8, 1);
+
+insert into autor (nombre) values('Julio Verne');
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('Viaje al centro de la Tierra',
+9, 1864,'pqwuibf',360,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6R_MFjjUWgi9TEADamMsWj9foZxwbAll7lKS2tP58u2FwR0A_AhV7u67Y1g&s=5',
+'Viaje al centro de la Tierra es una novela de Julio Verne, publicada el 25 de noviembre de 1864, que trata de la expedición
+de un profesor de mineralogía el profesor Lidenbrock, su sobrino Axel y un guía llamado Hans, viajan al interior de la Tierra y 
+se encuentran en su aventura con una gran sorpresa al llegar.');
+
+
+
+insert into libro_has_genero (idlibro, idgenero) values(9, 1);
+
+insert into libro_has_genero (idlibro, idgenero) values(9, 2);
+
+
+insert into autor (nombre) values('Edgar Allan Poe');
+
+INSERT INTO `libro`(`titulo`, `idautor`, `anhoedicion`, `ISBN`, `numeropaginas`, `linkimagen`, `decripcion`) 
+VALUES ('Los crímenes de la calle Morgue',
+10, 1841,'pqwuibf',44,
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGuCIM65yhMeWOU4ZUYUth3ibH9zZI1BtDSLjB_mf4xtcx7DpKLceOb0U&s=5',
+'Los crímenes de la calle Morgue, también conocido como Los asesinatos de la calle Morgue o Los asesinatos de la rue Morgue, 
+es un cuento del género policíaco y de terror del escritor estadounidense Edgar Allan Poe, publicado por primera vez en la revista 
+Grahams Magazine, de Filadelfia, en el mes de abril de 1841.');
+
+insert into libro_has_genero (idlibro, idgenero) values(10, 3);
