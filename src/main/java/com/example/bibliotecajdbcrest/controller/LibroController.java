@@ -1,6 +1,5 @@
 package com.example.bibliotecajdbcrest.controller;
 
-import com.example.bibliotecajdbcrest.model.Autor;
 import com.example.bibliotecajdbcrest.model.Genero;
 import com.example.bibliotecajdbcrest.repository.LibrosRepository;
 import com.example.bibliotecajdbcrest.repository.RepoGeneral;
@@ -15,28 +14,35 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(path = {"/", "/libreria"})
-public class ControladorGeneral {
-
+public class LibroController {
+    
     @Autowired
     LibrosRepository repoLibros;
 
-    /*@Autowired
-    @Qualifier("repogenero")
-    RepoGeneral<Genero> repoGenero;*/
-
     @Autowired
-    @Qualifier("repoautor")
-    RepoGeneral<Autor> repoAutor;
-    
+    @Qualifier("repogenero")
+    RepoGeneral<Genero> repoGenero;
 
-    @GetMapping("/librosautor/{id}")
-    public ModelAndView librosAutores(@PathVariable(required = true, name = "id") int id){
+
+    @GetMapping("/libros")
+	public ModelAndView listadoLibros(){
         
-        ModelAndView modelAndView = new ModelAndView("librosautor");
-        modelAndView.addObject("libros", this.repoLibros.listAllByIdAutor(id));
-        modelAndView.addObject("autor", this.repoAutor.listById(id));
+        ModelAndView modelAndView = new ModelAndView("index");
+        
+        modelAndView.addObject("libros", this.repoLibros.listAll());
+        modelAndView.addObject("generos", this.repoGenero.listAll());
+        
         return modelAndView;
     }
 
-    
+
+    @GetMapping("/libro/{id}")
+    public ModelAndView libro(@PathVariable(required = true, name = "id") int id){
+        
+        ModelAndView modelAndView = new ModelAndView("vista_libro");
+        modelAndView.addObject("libro", this.repoLibros.listById(id));
+        return modelAndView;
+    }
+
+
 }
