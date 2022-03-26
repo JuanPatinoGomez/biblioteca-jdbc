@@ -42,7 +42,11 @@ public class AutorRepositoryImpl implements RepoGeneral<Autor>{
     @Override
     public boolean save(Autor object) {
         
-        return false;
+        String sql = "INSERT INTO autor(nombre) values(?)";
+        
+        int result = this.jdbcTemplate.update(sql, object.getNombre());
+
+        return result==1? true : false;
     }
 
     @Override

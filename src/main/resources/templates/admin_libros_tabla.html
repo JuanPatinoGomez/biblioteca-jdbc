@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" th:href="@{/css/css_general.css}"> -->
+    <link rel="stylesheet" href="/css/css_general.css">
+    <link rel="stylesheet" href="/css/vista_lineal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <header>
+        <h1>
+            Libreria casa de la <br>
+            lectura
+        </h1>
+        <nav>
+            <a th:href="@{/libreria/libros}"><img th:src="@{/img/Imagen 4.png}" alt="Libros"></a>
+            <a th:href="@{/libreria/autores}"><img th:src="@{/img/Imagen 6.png}" alt="Autores"></a>
+        </nav>
+    </header>
+
+    <section class="vista_peliculas">
+
+        <div class="contenedor_peliculas">
+            <ul th:each="pelicula : ${peliculas}">
+                <li><img th:src="@{/img/claqueta.png}" alt="" width="40px"></li>
+                <li class="nombrePeli" th:text="${pelicula.titulo}">Nombre pelicula</li>
+                <li class="generoPeli" th:text="${pelicula.genero}">Genero pelicula</li>
+                <li class="accionPeli"><a th:href="@{/inicio/eliminarpeli?id=} + ${pelicula.id}"><img src="/img/eliminar.png" alt="" width="40px"></a></li>
+            </ul>
+        </div>
+        
+
+    </section>
+</body>
+</html>

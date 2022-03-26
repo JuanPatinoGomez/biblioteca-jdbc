@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelis</title>
+
+    <link rel="stylesheet" th:href="@{/css/css_general.css}">
+    <!-- <link rel="stylesheet" href="/css/css_general.css"> -->
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <header>
+        <h1>
+            Libreria casa de la <br>
+            lectura
+        </h1>
+        <nav>
+            <a th:href="@{/libreria/libros}"><img th:src="@{/img/Imagen 4.png}" alt="Libros"></a>
+            <a th:href="@{/libreria/autores}"><img th:src="@{/img/Imagen 6.png}" alt="Autores"></a>
+        </nav>
+    </header>
+
+    <section id="administracion">
+        <a th:href="@{/libreria/adminautores}">Administrar autores</a>
+    </section>
+</body>
+</html>

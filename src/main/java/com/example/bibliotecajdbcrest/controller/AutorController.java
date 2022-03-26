@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,4 +30,33 @@ public class AutorController {
         return modelAndView;
 
     }
+
+    @GetMapping("/adminautores")
+    public ModelAndView panelAdminAutores(){
+
+        ModelAndView modelAndView = new ModelAndView("admin_autores_tabla");
+        modelAndView.addObject("autores", this.repoAutor.listAll());
+
+        return modelAndView;
+
+    }
+
+    @GetMapping("/autores/nuevo")
+    public ModelAndView nuevoAutor(){
+
+        ModelAndView modelAndView = new ModelAndView("form_nuevo_autor");
+        modelAndView.addObject("autor", new Autor());
+
+        return modelAndView;
+    }
+
+    @PostMapping("/autores/save")
+    public String guardarAutor(@ModelAttribute Autor autor){
+
+        System.out.println(autor.toString());
+        this.repoAutor.save(autor);
+
+        return "redirect:/adminautores";
+    }
+
 }
