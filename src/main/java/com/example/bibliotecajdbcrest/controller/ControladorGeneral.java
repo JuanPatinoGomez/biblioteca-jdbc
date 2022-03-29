@@ -3,10 +3,9 @@ package com.example.bibliotecajdbcrest.controller;
 import com.example.bibliotecajdbcrest.model.Autor;
 import com.example.bibliotecajdbcrest.model.Genero;
 import com.example.bibliotecajdbcrest.repository.LibrosRepository;
-import com.example.bibliotecajdbcrest.repository.RepoGeneral;
+import com.example.bibliotecajdbcrest.service.AutorService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,8 +24,7 @@ public class ControladorGeneral {
     RepoGeneral<Genero> repoGenero;*/
 
     @Autowired
-    @Qualifier("repoautor")
-    RepoGeneral<Autor> repoAutor;
+    AutorService autorService;
     
 
     @GetMapping("/librosautor/{id}")
@@ -34,7 +32,7 @@ public class ControladorGeneral {
         
         ModelAndView modelAndView = new ModelAndView("librosautor");
         modelAndView.addObject("libros", this.repoLibros.listAllByIdAutor(id));
-        modelAndView.addObject("autor", this.repoAutor.listById(id));
+        modelAndView.addObject("autor", this.autorService.listById(id));
         return modelAndView;
     }
 

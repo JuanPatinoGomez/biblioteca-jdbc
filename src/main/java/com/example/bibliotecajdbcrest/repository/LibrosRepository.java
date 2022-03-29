@@ -2,11 +2,9 @@ package com.example.bibliotecajdbcrest.repository;
 
 import java.util.List;
 
-import com.example.bibliotecajdbcrest.model.Autor;
 import com.example.bibliotecajdbcrest.model.Libro;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -15,8 +13,7 @@ import org.springframework.stereotype.Repository;
 public class LibrosRepository implements RepoGeneral<Libro>{
 
     @Autowired
-    @Qualifier("repoautor")
-    RepoGeneral<Autor> repoAutor;
+    AutorRepo repoAutor;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

@@ -21,10 +21,6 @@ public class BibliotecaJdbcRestApplication implements CommandLineRunner{
 	private Logger log = LoggerFactory.getLogger(BibliotecaJdbcRestApplication.class);
 
 	@Autowired
-	@Qualifier("repoautor")
-	private RepoGeneral<Autor> repoAutor;
-
-	@Autowired
 	@Qualifier("repogenero")
 	private RepoGeneral<Genero> repoGenero;
 

@@ -1,10 +1,9 @@
 package com.example.bibliotecajdbcrest.controller;
 
 import com.example.bibliotecajdbcrest.model.Autor;
-import com.example.bibliotecajdbcrest.repository.RepoGeneral;
+import com.example.bibliotecajdbcrest.service.AutorService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,14 +17,13 @@ public class AutorController {
     
 
     @Autowired
-    @Qualifier("repoautor")
-    RepoGeneral<Autor> repoAutor;
+    AutorService autorService;
 
     @GetMapping("/autores")
     public ModelAndView autores(){
 
         ModelAndView modelAndView = new ModelAndView("autores");
-        modelAndView.addObject("autores", this.repoAutor.listAll());
+        modelAndView.addObject("autores", this.autorService.listAll());
 
         return modelAndView;
 
@@ -35,7 +33,7 @@ public class AutorController {
     public ModelAndView panelAdminAutores(){
 
         ModelAndView modelAndView = new ModelAndView("admin_autores_tabla");
-        modelAndView.addObject("autores", this.repoAutor.listAll());
+        modelAndView.addObject("autores", this.autorService.listAll());
 
         return modelAndView;
 
@@ -54,7 +52,7 @@ public class AutorController {
     public String guardarAutor(@ModelAttribute Autor autor){
 
         System.out.println(autor.toString());
-        this.repoAutor.save(autor);
+        this.autorService.save(autor);
 
         return "redirect:/adminautores";
     }
