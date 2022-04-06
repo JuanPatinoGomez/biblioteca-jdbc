@@ -1,8 +1,5 @@
 package com.example.bibliotecajdbcrest.controller;
 
-import com.example.bibliotecajdbcrest.model.Autor;
-import com.example.bibliotecajdbcrest.model.Genero;
-import com.example.bibliotecajdbcrest.repository.LibrosRepositoryImpl;
 import com.example.bibliotecajdbcrest.service.AutorServiceI;
 import com.example.bibliotecajdbcrest.service.LibroServiceI;
 
@@ -19,10 +16,6 @@ public class ControladorGeneral {
 
     @Autowired
     LibroServiceI libroService;
-
-    /*@Autowired
-    @Qualifier("repogenero")
-    RepoGeneral<Genero> repoGenero;*/
 
     @Autowired
     AutorServiceI autorService;

@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository("repolibro")
-public class LibrosRepositoryImpl implements LibrosRepoI{
+public class LibroRepositoryImpl implements LibroRepoI{
 
     @Autowired
     AutorRepoI repoAutor;

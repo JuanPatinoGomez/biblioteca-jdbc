@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository("repogenero")
-public class GeneroRepositoryImpl implements RepoGeneral<Genero>{
+public class GeneroRepositoryImpl implements GeneroRepoI{
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -36,19 +36,19 @@ public class GeneroRepositoryImpl implements RepoGeneral<Genero>{
         return this.jdbcTemplate.queryForObject(sql, rowMapper, id);
     }
 
-    @Override
+    // @Override
     public boolean save(Genero object) {
         
         return false;
     }
 
-    @Override
+    // @Override
     public boolean update(Genero object, int id) {
         
         return false;
     }
 
-    @Override
+    // @Override
     public boolean delete(int id) {
         
         return false;

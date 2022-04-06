@@ -3,7 +3,7 @@ package com.example.bibliotecajdbcrest.service;
 import java.util.List;
 
 import com.example.bibliotecajdbcrest.model.Libro;
-import com.example.bibliotecajdbcrest.repository.LibrosRepoI;
+import com.example.bibliotecajdbcrest.repository.LibroRepoI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class LibroServiceImpl implements LibroServiceI{
 
     @Autowired
-    private LibrosRepoI repoLibro;
+    private LibroRepoI repoLibro;
 
 
     public List<Libro> listAllByTitle(String titulo){

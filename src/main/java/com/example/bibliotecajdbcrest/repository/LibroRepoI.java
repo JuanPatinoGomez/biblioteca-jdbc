@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.bibliotecajdbcrest.model.Libro;
 
-public interface LibrosRepoI {
+public interface LibroRepoI {
     
     List<Libro> listAll();
     Libro listById(int id);
