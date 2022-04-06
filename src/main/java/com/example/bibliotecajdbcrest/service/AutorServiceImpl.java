@@ -3,17 +3,17 @@ package com.example.bibliotecajdbcrest.service;
 import java.util.List;
 
 import com.example.bibliotecajdbcrest.model.Autor;
-import com.example.bibliotecajdbcrest.repository.AutorRepo;
+import com.example.bibliotecajdbcrest.repository.AutorRepoI;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AutorServiceImpl implements AutorService {
+public class AutorServiceImpl implements AutorServiceI {
     
     @Autowired
-    private AutorRepo autorRepo;
+    private AutorRepoI autorRepo;
 
     @Override
     public List<Autor> listAll() {

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.bibliotecajdbcrest.model.Libro;
-import com.example.bibliotecajdbcrest.service.LibroService;
+import com.example.bibliotecajdbcrest.service.LibroServiceI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LibroRest {
 
     @Autowired
-    LibroService libroService;
+    LibroServiceI libroService;
 
     /*@GetMapping("/buscartitulo")
     public List<Libro> buscadorTitulo(@RequestBody String titulo){ //Este recibe texto plano

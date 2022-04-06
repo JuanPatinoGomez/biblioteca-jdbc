@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.bibliotecajdbcrest.model.Autor;
-import com.example.bibliotecajdbcrest.service.AutorService;
+import com.example.bibliotecajdbcrest.service.AutorServiceI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AutorRest {
 
     @Autowired
-    private AutorService autorService;
+    private AutorServiceI autorService;
 
     @PostMapping("/buscarpornombre")
     public List<Autor> listAllByName(@RequestBody Map<String, String> mapa){

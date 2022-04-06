@@ -20,14 +20,6 @@ public class BibliotecaJdbcRestApplication implements CommandLineRunner{
 
 	private Logger log = LoggerFactory.getLogger(BibliotecaJdbcRestApplication.class);
 
-	@Autowired
-	@Qualifier("repogenero")
-	private RepoGeneral<Genero> repoGenero;
-
-	@Autowired
-	@Qualifier("repolibro")
-	private RepoGeneral<Libro> repoLibro;
-	
 	public static void main(String[] args) {
 		SpringApplication.run(BibliotecaJdbcRestApplication.class, args);
 	}
@@ -35,29 +27,9 @@ public class BibliotecaJdbcRestApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		/*log.info("Listado de autores ------------------------------------------");
-		
-		List<Autor> autores = this.repoAutor.listAll();
-
-		autores.forEach(System.out::println);
-
-		log.info("Listado de generos ------------------------------------------");
-		
-		List<Genero> generos = this.repoGenero.listAll();
-
-		generos.forEach(System.out::println);
-
-		log.info("Listado de libros ------------------------------------------");
-		
-		List<Libro> libros = this.repoLibro.listAll();
-
-		libros.forEach(System.out::println);*/
-
-		
-		
 		
 	}
 
-	//
+	
 
 }

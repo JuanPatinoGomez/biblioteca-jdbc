@@ -1,7 +1,7 @@
 package com.example.bibliotecajdbcrest.controller;
 
 import com.example.bibliotecajdbcrest.model.Autor;
-import com.example.bibliotecajdbcrest.service.AutorService;
+import com.example.bibliotecajdbcrest.service.AutorServiceI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class AutorController {
     
 
     @Autowired
-    AutorService autorService;
+    AutorServiceI autorService;
 
     @GetMapping("/autores")
     public ModelAndView autores(){

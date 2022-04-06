@@ -1,8 +1,9 @@
 package com.example.bibliotecajdbcrest.controller;
 
 import com.example.bibliotecajdbcrest.model.Genero;
-import com.example.bibliotecajdbcrest.repository.LibrosRepository;
+import com.example.bibliotecajdbcrest.repository.LibrosRepositoryImpl;
 import com.example.bibliotecajdbcrest.repository.RepoGeneral;
+import com.example.bibliotecajdbcrest.service.LibroServiceI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LibroController {
     
     @Autowired
-    LibrosRepository repoLibros;
+    LibroServiceI libroService;
 
     @Autowired
     @Qualifier("repogenero")
@@ -29,7 +30,7 @@ public class LibroController {
         
         ModelAndView modelAndView = new ModelAndView("index");
         
-        modelAndView.addObject("libros", this.repoLibros.listAll());
+        modelAndView.addObject("libros", this.libroService.listAll());
         modelAndView.addObject("generos", this.repoGenero.listAll());
         
         return modelAndView;
@@ -40,7 +41,7 @@ public class LibroController {
     public ModelAndView libro(@PathVariable(required = true, name = "id") int id){
         
         ModelAndView modelAndView = new ModelAndView("vista_libro");
-        modelAndView.addObject("libro", this.repoLibros.listById(id));
+        modelAndView.addObject("libro", this.libroService.listById(id));
         return modelAndView;
     }
 

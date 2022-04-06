@@ -1,10 +1,10 @@
-package com.example.bibliotecajdbcrest.repository;
+package com.example.bibliotecajdbcrest.service;
 
 import java.util.List;
 
 import com.example.bibliotecajdbcrest.model.Autor;
 
-public interface AutorRepo {
+public interface AutorServiceI {
     
     List<Autor> listAll();
     Autor listById(int id);
@@ -12,4 +12,5 @@ public interface AutorRepo {
     boolean update(Autor object, int id);
     boolean delete(int id);
     List<Autor> listAllByName(String name);
+
 }
