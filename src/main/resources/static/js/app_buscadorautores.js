@@ -24,7 +24,7 @@ function imprimirRespuesta(response){
             console.log(response[i]);
     
             let eleA = document.createElement('a');
-            eleA.href = '/libreria/librosautor/' + response[i].idAutor;
+            eleA.href = '/libreria/autores/' + response[i].idAutor + "/libros";
             
             let eleDiv = document.createElement('div');
             eleDiv.className = 'autor'
@@ -60,7 +60,7 @@ async function realizarBusqueda(){
 
     console.log(JSON.stringify(data));
 
-    const response = await myHttp.POST('/restautores/buscarpornombre', data);
+    const response = await myHttp.POST('/libreria/autores/rest/buscar/nombre', data);
     imprimirRespuesta(response);
 }
 

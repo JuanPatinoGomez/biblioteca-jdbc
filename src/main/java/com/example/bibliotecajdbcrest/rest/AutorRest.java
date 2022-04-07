@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/restautores")
+@RequestMapping("/libreria/autores/rest")
 public class AutorRest {
 
     @Autowired
     private AutorServiceI autorService;
 
-    @PostMapping("/buscarpornombre")
+    @PostMapping("/buscar/nombre")
     public List<Autor> listAllByName(@RequestBody Map<String, String> mapa){
         return this.autorService.listAllByName(mapa.get("buscador"));
     }

@@ -32,7 +32,7 @@
         <div class="contenedor_formulario glass" >
 
 
-            <form method="post" th:action="@{/autores/save}" th:object="${autor}">
+            <form method="post" th:action="@{/libreria/administracion/autores/save}" th:object="${autor}">
                 <input type="hidden" name="idautor" th:field="*{idAutor}">
                 <table>
                     <tr>
@@ -46,7 +46,7 @@
                 </table>
                 <div class="btns">
                     <input type="submit" value="Enviar">
-                    <a th:href="@{/libreria/adminautores}"><input type="button" value="Volver"></a>
+                    <a th:href="@{/libreria/administracion/autores}"><input type="button" value="Volver"></a>
                 </div>
                 
             </form>

@@ -39,7 +39,7 @@
     </section>
 
     <main>
-        <a th:each="libro: ${libros}" th:href="@{/libreria/libro/} + ${libro.id}">
+        <a th:each="libro: ${libros}" th:href="@{/libreria/libros/} + ${libro.id}">
             <div class="libro" >
                 <img th:src="${libro.linkImagen}" alt="">
                 <p th:text="${libro.titulo}">La belleza y el terror</p>

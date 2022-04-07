@@ -24,7 +24,7 @@
             <a th:href="@{/libreria/autores}"><img th:src="@{/img/Imagen 6.png}" alt="Autores"></a>
         </nav>
         <div>
-            <a th:href="@{/libreria/paneladmin}"><img th:src="@{/img/adminbiblioteca/admin.png}" alt="" style="width: 100px;"></a>
+            <a th:href="@{/libreria/administracion}"><img th:src="@{/img/adminbiblioteca/admin.png}" alt="" style="width: 100px;"></a>
             
         </div>
     </header>
@@ -46,7 +46,7 @@
     </section>
 
     <main id="resp">
-        <a th:each="libro: ${libros}" th:href="@{/libreria/libro/} + ${libro.id}">
+        <a th:each="libro: ${libros}" th:href="@{/libreria/libros/} + ${libro.id}">
             <div class="libro" >
                 <img th:src="${libro.linkImagen}" alt="">
                 <p th:text="${libro.titulo}">La belleza y el terror</p>

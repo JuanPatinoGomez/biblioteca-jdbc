@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/restlibros")
+@RequestMapping("/libreria/libros/rest")
 public class LibroRest {
 
     @Autowired
@@ -27,7 +27,7 @@ public class LibroRest {
 
     }*/
     
-    @PostMapping("/buscarportitulo")
+    @PostMapping("/buscar/titulo")
     public List<Libro> buscadorTitulo(@RequestBody Map<String, String> mapa){ //Este recibe json
 
         System.out.println("El mapa recibido es: " + mapa);
@@ -37,7 +37,7 @@ public class LibroRest {
     }
 
 
-    @PostMapping("/buscarporgenero")
+    @PostMapping("/buscar/genero")
     public List<Libro> buscadorLibrosGenero(@RequestBody Map<String, Integer> mapa){
         return this.libroService.listAllByGenero(mapa.get("genero"));
     }

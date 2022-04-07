@@ -23,7 +23,7 @@ public class LibroController {
     GeneroServiceI generoService;
 
 
-    @GetMapping("/libros")
+    @GetMapping(path = {"/" ,"/libros"})
 	public ModelAndView listadoLibros(){
         
         ModelAndView modelAndView = new ModelAndView("index");
@@ -35,7 +35,7 @@ public class LibroController {
     }
 
 
-    @GetMapping("/libro/{id}")
+    @GetMapping("/libros/{id}")
     public ModelAndView libro(@PathVariable(required = true, name = "id") int id){
         
         ModelAndView modelAndView = new ModelAndView("vista_libro");

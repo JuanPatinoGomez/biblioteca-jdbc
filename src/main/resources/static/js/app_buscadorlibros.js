@@ -25,7 +25,7 @@ function imprimirRespuesta(response){
             console.log(response[i]);
     
             let eleA = document.createElement('a');
-            eleA.href = '/libreria/libro/' + response[i].id;
+            eleA.href = '/libreria/libros/' + response[i].id;
             
             let eleDiv = document.createElement('div');
             eleDiv.className = 'libro'
@@ -62,7 +62,7 @@ async function realizarBusqueda(){
 
     console.log(JSON.stringify(data));
 
-    const response = await myHttp.POST('/restlibros/buscarportitulo', data);
+    const response = await myHttp.POST('/libreria/libros/rest/buscar/titulo', data);
     imprimirRespuesta(response);
 }
 
@@ -82,7 +82,7 @@ async function cambioGenero(){
 
     console.log(JSON.stringify(data));
 
-    const response = await myHttp.POST('/restlibros/buscarporgenero', data);
+    const response = await myHttp.POST('/libreria/libros/rest/buscar/genero', data);
     imprimirRespuesta(response);
 }
 

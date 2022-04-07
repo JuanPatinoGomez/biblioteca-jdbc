@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminController {
     
 
-    @GetMapping("/paneladmin")
+    @GetMapping("/administracion")
     public String panelDeAdministracion(){
         return "panel_administracion_libreria";
     }

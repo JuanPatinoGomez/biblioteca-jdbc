@@ -41,7 +41,7 @@
     </section>
 
     <main id="resp">
-        <a th:each="autor : ${autores}" th:href="@{/libreria/librosautor/} + ${autor.idAutor}">
+        <a th:each="autor : ${autores}" th:href="@{/libreria/autores/} + ${autor.idAutor} + @{/libros}">
             <div class="autor" >
                 <img th:src="@{/img/hand-.png}" alt="">
                 <p th:text="${autor.nombre}">nombre del autor</p>
