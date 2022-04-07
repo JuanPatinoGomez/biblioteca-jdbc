@@ -58,7 +58,11 @@ public class AutorRepositoryImpl implements AutorRepoI{
     @Override
     public boolean delete(int id) {
         
-        return false;
+        String sql = "DELETE FROM autor WHERE  id= ?";
+
+        int result = this.jdbcTemplate.update(sql, id);
+
+        return result==1? true : false;
     }
 
     //Metodos consultas por buscador

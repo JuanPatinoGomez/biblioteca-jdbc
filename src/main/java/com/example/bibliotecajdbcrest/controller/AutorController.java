@@ -72,7 +72,22 @@ public class AutorController {
         return "redirect:/libreria/administracion/autores";
     }
 
-    
+    @GetMapping("/administracion/autores/edit/{id}")
+    public ModelAndView editarAutor(@PathVariable(required = true, name = "id")int id){
+
+        ModelAndView modelAndView = new ModelAndView("form_nuevo_autor");
+        modelAndView.addObject("autor", this.autorService.listById(id));
+
+        return modelAndView;
+    }
+
+    @GetMapping("/administracion/autores/delete/{id}")
+    public String eliminarAutor(@PathVariable(required = true, name = "id")int id){
+
+        this.autorService.delete(id);
+
+        return "redirect:/libreria/administracion/autores";
+    }
 
     
 

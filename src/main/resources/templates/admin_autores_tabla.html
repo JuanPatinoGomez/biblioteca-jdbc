@@ -36,11 +36,13 @@
                 <li><img th:src="@{/img/claqueta.png}" alt="" width="40px"></li>
                 <li class="generoPeli" th:text="${autor.idAutor}">id autor</li>
                 <li class="nombrePeli" th:text="${autor.nombre}">Nombre autor</li>
-                <li class="accionPeli"><a th:href="@{/inicio/eliminarpeli?id=} + ${autor.idAutor}"><img th:src="@{/img/adminbiblioteca/eliminar.png}" alt="" width="40px"></a></li>
+                <li class="accionPeli"><a th:href="@{/libreria/administracion/autores/edit/} + ${autor.idAutor}"><img th:src="@{/img/adminbiblioteca/icon-edit.png}" alt="" width="40px"></a></li>
+                <li class="accionPeli"><a th:href="@{/libreria/administracion/autores/delete/} + ${autor.idAutor}"><img th:src="@{/img/adminbiblioteca/eliminar.png}" alt="" width="40px"></a></li>
             </ul>
         </div>
         
 
     </section>
+    <a target="_blank" href="https://icons8.com/icon/56304/editar">Editar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 </body>
 </html>
