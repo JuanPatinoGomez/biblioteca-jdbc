@@ -37,7 +37,20 @@ section.vista_peliculas{
 
     transition: all 0.25s;
 
+    margin-bottom: 20px;
+
 }
+
+.contenedor_peliculas div a{
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.438);
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
 .contenedor_peliculas ul li img{
     padding: 5px;
 }
@@ -53,10 +66,10 @@ section.vista_peliculas{
     text-align: center;
 }
 
-.contenedor_peliculas ul:hover{
+/* .contenedor_peliculas ul:hover{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0,0,0,0.2);
-}
+} */
 
 
 

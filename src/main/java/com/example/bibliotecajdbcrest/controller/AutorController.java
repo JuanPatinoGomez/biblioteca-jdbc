@@ -67,7 +67,13 @@ public class AutorController {
     public String guardarAutor(@ModelAttribute Autor autor){
 
         System.out.println(autor.toString());
-        this.autorService.save(autor);
+        //Si es igual a 0 se genera un nuevo autor, de lo contrario significa que se esta actualizando
+        if(autor.getIdAutor() == 0){
+            this.autorService.save(autor);
+        }else{
+            this.autorService.update(autor, autor.getIdAutor());
+        }
+        
 
         return "redirect:/libreria/administracion/autores";
     }

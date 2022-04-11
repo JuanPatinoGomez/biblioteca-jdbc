@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- <link rel="stylesheet" th:href="@{/css/css_general.css}"> -->
-    <link rel="stylesheet" href="/css/css_general.css">
-    <link rel="stylesheet" href="/css/vista_lineal.css">
+    <link rel="stylesheet" th:href="@{/css/css_general.css}">
+    <link rel="stylesheet" th:href="@{/css/adminbiblioteca/vista_lineal.css}">
+    <!-- <link rel="stylesheet" href="/static/css/css_general.css">
+    <link rel="stylesheet" href="/static/css/adminbiblioteca/vista_lineal.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -30,15 +31,22 @@
     <section class="vista_peliculas">
 
         <div class="contenedor_peliculas">
-            <ul th:each="pelicula : ${peliculas}">
+            <div>
+                <a th:href="@{/libreria/administracion/libros/nuevo}">Agregar nuevo libro</a>
+            </div>
+            <ul th:each="libro : ${libros}">
                 <li><img th:src="@{/img/claqueta.png}" alt="" width="40px"></li>
-                <li class="nombrePeli" th:text="${pelicula.titulo}">Nombre pelicula</li>
-                <li class="generoPeli" th:text="${pelicula.genero}">Genero pelicula</li>
-                <li class="accionPeli"><a th:href="@{/inicio/eliminarpeli?id=} + ${pelicula.id}"><img src="/img/eliminar.png" alt="" width="40px"></a></li>
+                <li class="generoPeli" th:text="${libro.titulo}">id autor</li>
+                <li class="nombrePeli" th:text="${libro.anhoEdicion}">Nombre autor</li>
+                <li class="nombrePeli" th:text="${libro.ISBN}">Nombre autor</li>
+                <li class="nombrePeli" th:text="${libro.numeroPaginas}">Nombre autor</li>
+                <li class="accionPeli"><a th:href="@{/libreria/administracion/libros/edit/} + ${libro.id}"><img th:src="@{/img/adminbiblioteca/icon-edit.png}" alt="" width="40px"></a></li>
+                <li class="accionPeli"><a th:href="@{/libreria/administracion/libros/delete/} + ${libro.id}"><img th:src="@{/img/adminbiblioteca/eliminar.png}" alt="" width="40px"></a></li>
             </ul>
         </div>
         
 
     </section>
+    <a target="_blank" href="https://icons8.com/icon/56304/editar">Editar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 </body>
 </html>

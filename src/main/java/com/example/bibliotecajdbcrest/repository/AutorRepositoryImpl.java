@@ -52,7 +52,11 @@ public class AutorRepositoryImpl implements AutorRepoI{
     @Override
     public boolean update(Autor object, int id) {
         
-        return false;
+        String sql = "UPDATE autor set nombre = ? WHERE id = ?";
+        
+        int result = this.jdbcTemplate.update(sql, object.getNombre(), id);
+
+        return result==1? true : false;
     }
 
     @Override

@@ -7,7 +7,10 @@
     <title>Pelis</title>
 
     <link rel="stylesheet" th:href="@{/css/css_general.css}">
-    <!-- <link rel="stylesheet" href="/css/css_general.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/css_general.css"> -->
+    <link rel="stylesheet" th:href="@{/css/adminbiblioteca/paneladming.css}">
+    <!-- <link rel="stylesheet" href="/static/css/adminbiblioteca/paneladming.css"> -->
+
     <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
@@ -21,13 +24,14 @@
             lectura
         </h1>
         <nav>
-            <a th:href="@{/libreria/libros}"><img th:src="@{/img/Imagen 4.png}" alt="Libros"></a>
+            <a th:href="@{/libreria/libros}"><img th:src="@{/img/Imagen 4.png}" alt="Libros"></a> 
             <a th:href="@{/libreria/autores}"><img th:src="@{/img/Imagen 6.png}" alt="Autores"></a>
         </nav>
     </header>
 
     <section id="administracion">
-        <a th:href="@{/libreria/administracion/autores}">Administrar autores</a>
+        <a th:href="@{/libreria/administracion/autores}">Administrar autores</a><br><br>
+        <a th:href="@{/libreria/administracion/libros}">Administrar libros</a>
     </section>
 </body>
 </html>

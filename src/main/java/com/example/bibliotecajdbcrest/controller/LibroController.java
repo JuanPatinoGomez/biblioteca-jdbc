@@ -44,4 +44,18 @@ public class LibroController {
     }
 
 
+    /**Administracion */
+
+    @GetMapping("/administracion/libros")
+    public ModelAndView panelAdminAutores(){
+
+        ModelAndView modelAndView = new ModelAndView("admin_libros_tabla");
+        modelAndView.addObject("libros", this.libroService.listAll());
+
+        return modelAndView;
+
+    }
+
+    
+
 }
