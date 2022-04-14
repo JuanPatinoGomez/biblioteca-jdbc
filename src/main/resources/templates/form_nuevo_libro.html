@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelis</title>
+
+    <link rel="stylesheet" th:href="@{/css/css_general.css}">
+    <!-- <link rel="stylesheet" href="/css/css_general.css"> -->
+    <link rel="stylesheet" th:href="@{/css/adminbiblioteca/vista_formulario.css}">
+    <!-- <link rel="stylesheet" href="/css/adminbiblioteca/vista_formulario.css"> -->
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>
+            Libreria casa de la <br>
+            lectura
+        </h1>
+        <nav>
+            <a th:href="@{/libreria/libros}"><img th:src="@{/img/Imagen 4.png}" alt="Libros"></a>
+            <a th:href="@{/libreria/autores}"><img th:src="@{/img/Imagen 6.png}" alt="Autores"></a>
+        </nav>
+    </header>
+
+    <section class="vista_formulario">
+
+        <div class="contenedor_formulario glass" >
+
+
+            <form method="post" th:action="@{/libreria/administracion/libros/save}" th:object="${libroform}">
+                <input type="hidden" name="idlibroform" th:field="*{id}">
+                <table>
+                    <tr>
+                        <td colspan="2"><h3>Nuevo libro</h3></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nombre">Titulo:</label></td>
+                        <td><input type="text" name="nombre" id="nombre" class="fondoglass" th:field="*{titulo}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nombre">Año de edición:</label></td>
+                        <td><input type="number" name="nombre" id="nombre" class="fondoglass" th:field="*{anhoEdicion}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nombre">ISBN:</label></td>
+                        <td><input type="text" name="nombre" id="nombre" class="fondoglass" th:field="*{ISBN}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nombre">Numero de paginas:</label></td>
+                        <td><input type="number" name="nombre" id="nombre" class="fondoglass" th:field="*{numeroPaginas}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nombre">Link de la imagen:</label></td>
+                        <td><input type="text" name="nombre" id="nombre" class="fondoglass" th:field="*{linkImagen}"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nombre">Descripción:</label></td>
+                        <td><input type="text" name="nombre" id="nombre" class="fondoglass" th:field="*{descripcion}"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="col-form-label col-sm-4">Seleccione una o más categorias:</label>
+                        </td>
+                        <td>
+
+                            <select th:field="*{listadoGeneros}" class="form-control" multiple="multiple" required>
+                                <th:block th:each="genero: ${listaGeneros}">
+                                    <option th:text="${genero.genero}" th:value="${genero.idGenero}"></option>
+                                </th:block>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="col-form-label col-sm-4">Seleccione una o más categorias:</label>
+                        </td>
+                        <td>
+
+                            <select th:field="*{idAutor}" class="form-control" required>
+                                <th:block th:each="autor: ${listaAutores}">
+                                    <option th:text="${autor.nombre}" th:value="${autor.idAutor}"></option>
+                                </th:block>
+                            </select>
+
+                        </td>
+                    </tr>
+                </table>
+                <div class="btns">
+                    <input type="submit" value="Enviar">
+                    <a th:href="@{/libreria/administracion/libros}"><input type="button" value="Volver"></a>
+                </div>
+                
+            </form>
+
+        </div>
+
+        
+
+    </section>
+</body>
+</html>

@@ -3,6 +3,7 @@ package com.example.bibliotecajdbcrest.repository;
 import java.util.List;
 
 import com.example.bibliotecajdbcrest.model.Libro;
+import com.example.bibliotecajdbcrest.model.LibroForm;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -34,6 +35,10 @@ public class LibroRepositoryImpl implements LibroRepoI{
         return libro;
     };
 
+    private RowMapper<Integer> rowMapper2 = (rs, row) ->{
+        return rs.getInt("id");
+    };
+
     @Override
     public List<Libro> listAll() {
 
@@ -50,13 +55,56 @@ public class LibroRepositoryImpl implements LibroRepoI{
     }
 
     @Override
-    public boolean save(Libro object) {
-        return false;
+    public boolean save(LibroForm object) {
+
+        String sql = "INSERT INTO libro(titulo, idautor, anhoedicion, ISBN, numeropaginas, linkimagen, descripcion) values(?,?,?,?,?,?,?)";
+        
+        //Se almacena el libro
+        int resultado = this.jdbcTemplate.update(sql, object.getTitulo(), object.getIdAutor(), object.getAnhoEdicion(), object.getISBN(),
+                                                object.getNumeroPaginas(), object.getLinkImagen(), object.getDescripcion());
+
+
+        //Traemos el id del libro recien creado
+        int idLibro = this.jdbcTemplate.queryForObject("SELECT MAX(id) AS id FROM libro", rowMapper2);
+        System.out.println("el libro guardado tiene el id: " + idLibro);
+        //se almacenar las relaciones de la tabla libro_has_genero
+        
+        object.getListadoGeneros().forEach(genero -> {
+
+            String sqlre = "INSERT INTO libro_has_genero(idlibro, idgenero) values(?,?)";
+
+            this.jdbcTemplate.update(sqlre, idLibro, genero);
+
+        });
+
+
+        return resultado > 0 ? true : false;
     }
 
     @Override
-    public boolean update(Libro object, int id) {
-        return false;
+    public boolean update(LibroForm object, int id) {
+
+        //Actualizamos el libro
+        String sql = "update libro set titulo = ?, idautor = ?, anhoedicion = ?, ISBN = ?, numeropaginas = ?, linkimagen = ?, descripcion = ? "+
+        " where id = ?";
+        int resultado = this.jdbcTemplate.update(sql, object.getTitulo(), object.getIdAutor(), object.getAnhoEdicion(), object.getISBN(),
+        object.getNumeroPaginas(), object.getLinkImagen(), object.getDescripcion(), id);
+
+        //Eliminamos las relaciones de la tabla libro_has_genero
+
+        this.jdbcTemplate.update("DELETE FROM libro_has_genero WHERE idlibro = ?", id);
+
+        //Volvemos a almacenar las relaciones de la tabla libro_has_genero
+
+        object.getListadoGeneros().forEach(genero -> {
+
+            String sqlre = "INSERT INTO libro_has_genero(idlibro, idgenero) values(?,?)";
+
+            this.jdbcTemplate.update(sqlre, id, genero);
+
+        });
+
+        return resultado > 0 ? true : false;
     }
 
     @Override
